@@ -239,7 +239,7 @@
     // Store away current values
     if (undoManager) {
         BNRDataBuffer *snapshot = [[BNRDataBuffer alloc]
-                                   initWithCapacity:PAGE_SIZE];
+                                   initWithCapacity:4096];
         [obj writeContentToBuffer:snapshot];
         [snapshot resetCursor];
         //NSLog(@"snapshot for undo = %@", snapshot);
@@ -265,7 +265,7 @@
     // Store away current values
     if (undoManager) {
         BNRDataBuffer *snapshot = [[BNRDataBuffer alloc]
-                                   initWithCapacity:PAGE_SIZE];
+                                   initWithCapacity:4096];
         [obj writeContentToBuffer:snapshot];
         [snapshot resetCursor];
         [[undoManager prepareWithInvocationTarget:self] updateObject:obj 
@@ -289,7 +289,7 @@
 {
     if (undoManager) {
         BNRDataBuffer *snapshot = [[BNRDataBuffer alloc]
-                                   initWithCapacity:PAGE_SIZE];
+                                   initWithCapacity:4096];
         [obj writeContentToBuffer:snapshot];
         [snapshot resetCursor];
 

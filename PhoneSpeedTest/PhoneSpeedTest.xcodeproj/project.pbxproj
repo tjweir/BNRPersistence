@@ -28,8 +28,8 @@
 		9366D82D110F3F98000A897D /* BNRStoreBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366D81F110F3F98000A897D /* BNRStoreBackend.m */; };
 		9366D82E110F3F98000A897D /* BNRStoredObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366D821110F3F98000A897D /* BNRStoredObject.m */; };
 		9366D830110F3F98000A897D /* BNRTCBackendCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366D825110F3F98000A897D /* BNRTCBackendCursor.m */; };
-		9366D8D81110928B000A897D /* libTokyoCabinet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9366D8D71110928B000A897D /* libTokyoCabinet.a */; };
 		9366DA731112158A000A897D /* BNRClassDictionary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9366DA6E1112158A000A897D /* BNRClassDictionary.mm */; };
+		CA934DDD11187C4A0093CE29 /* libTokyoCabinet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA934DDC11187C4A0093CE29 /* libTokyoCabinet.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +69,10 @@
 		9366D822110F3F98000A897D /* BNRTCBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRTCBackend.h; path = ../BNRPersistence/BNRTCBackend.h; sourceTree = SOURCE_ROOT; };
 		9366D824110F3F98000A897D /* BNRTCBackendCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRTCBackendCursor.h; path = ../BNRPersistence/BNRTCBackendCursor.h; sourceTree = SOURCE_ROOT; };
 		9366D825110F3F98000A897D /* BNRTCBackendCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRTCBackendCursor.m; path = ../BNRPersistence/BNRTCBackendCursor.m; sourceTree = SOURCE_ROOT; };
-		9366D8D71110928B000A897D /* libTokyoCabinet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTokyoCabinet.a; path = "../TokyoCabinet/build/Debug-iphoneos/libTokyoCabinet.a"; sourceTree = SOURCE_ROOT; };
 		9366DA6E1112158A000A897D /* BNRClassDictionary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BNRClassDictionary.mm; path = ../BNRPersistence/BNRClassDictionary.mm; sourceTree = SOURCE_ROOT; };
 		9366DA6F1112158A000A897D /* BNRUniquingTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRUniquingTable.h; path = ../BNRPersistence/BNRUniquingTable.h; sourceTree = SOURCE_ROOT; };
+		CA934DB311187AB80093CE29 /* libtokyocabinet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtokyocabinet.a; path = /usr/local/lib/libtokyocabinet.a; sourceTree = "<absolute>"; };
+		CA934DDC11187C4A0093CE29 /* libTokyoCabinet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTokyoCabinet.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +83,9 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
-				9366D8D81110928B000A897D /* libTokyoCabinet.a in Frameworks */,
 				93644B9C11129AE9008CA083 /* libz.dylib in Frameworks */,
 				93644BA011129B6B008CA083 /* CoreData.framework in Frameworks */,
+				CA934DDD11187C4A0093CE29 /* libTokyoCabinet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +119,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				CA934DDC11187C4A0093CE29 /* libTokyoCabinet.a */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -148,10 +150,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA934DB311187AB80093CE29 /* libtokyocabinet.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
-				9366D8D71110928B000A897D /* libTokyoCabinet.a */,
 				93644B9B11129AE9008CA083 /* libz.dylib */,
 				93644B9F11129B6B008CA083 /* CoreData.framework */,
 			);
@@ -274,6 +276,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../TokyoCabinet/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = PhoneSpeedTest;
 			};
@@ -291,6 +294,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../TokyoCabinet/build/Debug-iphoneos\"",
+					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = PhoneSpeedTest;
 			};
@@ -304,6 +308,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.2;
 			};
@@ -317,6 +322,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "";
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.2;
 			};
