@@ -29,6 +29,7 @@
 		9366D82E110F3F98000A897D /* BNRStoredObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366D821110F3F98000A897D /* BNRStoredObject.m */; };
 		9366D830110F3F98000A897D /* BNRTCBackendCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366D825110F3F98000A897D /* BNRTCBackendCursor.m */; };
 		9366DA731112158A000A897D /* BNRClassDictionary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9366DA6E1112158A000A897D /* BNRClassDictionary.mm */; };
+		CA01B85A111885F500666DC6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CA01B859111885F500666DC6 /* MBProgressHUD.m */; };
 		CA934DDD11187C4A0093CE29 /* libTokyoCabinet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA934DDC11187C4A0093CE29 /* libTokyoCabinet.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		9366D825110F3F98000A897D /* BNRTCBackendCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRTCBackendCursor.m; path = ../BNRPersistence/BNRTCBackendCursor.m; sourceTree = SOURCE_ROOT; };
 		9366DA6E1112158A000A897D /* BNRClassDictionary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BNRClassDictionary.mm; path = ../BNRPersistence/BNRClassDictionary.mm; sourceTree = SOURCE_ROOT; };
 		9366DA6F1112158A000A897D /* BNRUniquingTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRUniquingTable.h; path = ../BNRPersistence/BNRUniquingTable.h; sourceTree = SOURCE_ROOT; };
+		CA01B858111885F500666DC6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CA01B859111885F500666DC6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CA934DB311187AB80093CE29 /* libtokyocabinet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtokyocabinet.a; path = /usr/local/lib/libtokyocabinet.a; sourceTree = "<absolute>"; };
 		CA934DDC11187C4A0093CE29 /* libTokyoCabinet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTokyoCabinet.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +122,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				CA01B857111885F500666DC6 /* External */,
 				CA934DDC11187C4A0093CE29 /* libTokyoCabinet.a */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -185,6 +189,15 @@
 				9366D825110F3F98000A897D /* BNRTCBackendCursor.m */,
 			);
 			name = BNRPersistence;
+			sourceTree = "<group>";
+		};
+		CA01B857111885F500666DC6 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				CA01B858111885F500666DC6 /* MBProgressHUD.h */,
+				CA01B859111885F500666DC6 /* MBProgressHUD.m */,
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +269,7 @@
 				93644BD111129F66008CA083 /* CDComplex.xcdatamodel in Sources */,
 				93644BD211129F66008CA083 /* CDSimple.xcdatamodel in Sources */,
 				934ECE34111623A700F8C0E5 /* BNRUniquingTable.m in Sources */,
+				CA01B85A111885F500666DC6 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
