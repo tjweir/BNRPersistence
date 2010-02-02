@@ -84,7 +84,7 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   [super dealloc];
 }
 
-- (void)showLapsedTime:(uint64_t)start to:(uint64_t)stop
+- (void)showLapsedTime:(uint64_t)start to:(uint64_t)stop forTC:(BOOL) tc
 {    
   uint64_t elapsed = stop - start;
   
@@ -94,7 +94,10 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   uint64_t millisecs = nanosecs / 1000000;
   
   NSString *labelString = [NSString stringWithFormat:@"%lu ms", (long unsigned int)millisecs];
-  [label setText:labelString];
+  if (tc) 
+    [labelTC setText:labelString];
+  else 
+    [labelCD setText:labelString];  
 }
 
 
@@ -153,7 +156,7 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   [pool drain];
   
   uint64_t stop = mach_absolute_time();
-  [self showLapsedTime:start to:stop];
+  [self showLapsedTime:start to:stop forTC:YES];
 }
 
 - (IBAction)simpleInsertCD:(id)sender
@@ -192,7 +195,7 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   [pool drain];
   
   uint64_t stop = mach_absolute_time();
-  [self showLapsedTime:start to:stop];
+  [self showLapsedTime:start to:stop forTC:NO];
 }
 
 - (IBAction)complexInsertTC:(id)sender{
@@ -250,8 +253,8 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   
   [pool drain];
   
-  uint64_t end = mach_absolute_time();
-  [self showLapsedTime:start to:end];
+  uint64_t stop = mach_absolute_time();
+  [self showLapsedTime:start to:stop forTC:YES];
 }
 
 
@@ -313,8 +316,8 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   [context release];
   [pool drain];
   
-  uint64_t end = mach_absolute_time();
-  [self showLapsedTime:start to:end];    
+  uint64_t stop = mach_absolute_time();
+  [self showLapsedTime:start to:stop forTC:NO];
 }
 - (IBAction)simpleFetchTC:(id)sender{
   NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
@@ -333,7 +336,7 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   
   [pool drain];
   uint64_t stop = mach_absolute_time();
-  [self showLapsedTime:start to:stop];
+  [self showLapsedTime:start to:stop forTC:YES];
 }
 
 - (IBAction)simpleFetchCD:(id)sender{
@@ -357,8 +360,10 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   [pool drain];
   
   uint64_t stop = mach_absolute_time();
-  [self showLapsedTime:start to:stop];
+  [self showLapsedTime:start to:stop forTC:NO];
 }
+
+
 - (IBAction)complexFetchTC:(id)sender{
   NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
   
@@ -387,9 +392,11 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   
   [pool drain];
   
-  uint64_t end = mach_absolute_time();
-  [self showLapsedTime:start to:end];
+  uint64_t stop = mach_absolute_time();
+  [self showLapsedTime:start to:stop forTC:YES];
 }
+
+
 - (IBAction)complexFetchCD:(id)sender
 {
   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -428,8 +435,8 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   [context release];
   [pool drain];
   
-  uint64_t end = mach_absolute_time();
-  [self showLapsedTime:start to:end];
+  uint64_t stop = mach_absolute_time();
+  [self showLapsedTime:start to:stop forTC:NO];
   
 }
 - (IBAction)clearFiles:(id)sender{ 
@@ -450,7 +457,8 @@ NSManagedObjectContext *managedObjectContext(NSString *testName) {
   [fm removeItemAtPath:path
                  error:NULL];
   
-  [label setText:@"Files Deleted"];
+  [labelTC setText:@"Files Deleted"];
+  [labelCD setText:@"Files Deleted"];
   
 }
 

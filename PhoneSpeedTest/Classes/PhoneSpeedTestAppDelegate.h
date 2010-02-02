@@ -10,8 +10,10 @@
 
 @interface PhoneSpeedTestAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    IBOutlet UILabel *label;
+    IBOutlet UILabel *labelTC;
+    IBOutlet UILabel *labelCD;  
 }
+
 - (IBAction)simpleInsertTC:(id)sender;
 - (IBAction)simpleInsertCD:(id)sender;
 - (IBAction)complexInsertTC:(id)sender;
